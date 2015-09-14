@@ -1,0 +1,24 @@
+<!doctype html>
+
+<title>CodeMirror: Autocomplete X-Demo</title>
+<meta charset="utf-8"/>
+
+<link rel="stylesheet" href="lib/codemirror/lib/codemirror.css">
+<link rel="stylesheet" href="lib/codemirror/addon/hint/show-hint.css">
+<script src="lib/codemirror/lib/codemirror.js"></script>
+<script src="lib/codemirror/addon/hint/show-hint.js"></script>
+<script src="generic.js"></script>
+<script src="generic-hint.js"></script>
+
+<article>
+  <form><textarea id="code" name="code">some test: good > bad true false
+  </textarea></form>
+
+  <script>
+    var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+      lineNumbers: true,
+      extraKeys: {"Ctrl-Space": "autocomplete"},
+      mode: {name: "text/generic", globalVars: true}
+    });
+  </script>
+</article>
